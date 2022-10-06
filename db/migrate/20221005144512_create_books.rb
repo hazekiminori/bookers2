@@ -3,7 +3,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
     create_table :books do |t|
 
       t.timestamps
-      t.text :opinion
+      t.text :body
       t.string :title
     end
   end
