@@ -1,8 +1,8 @@
 <h1>New Book</h1>
-<% if @book.errors.any? %>
- <%= @book.errors.count %>errors prohibited this obj from being saved:
+<% if book.errors.any? %>
+ <%= book.errors.count %>errors prohibited this obj from being saved:
  <ul>
-  <%= @book.errors.full_messages.each do |message| %>
+  <%= book.errors.full_messages.each do |message| %>
    <li><%= message %></li>
   <% end %>
  </ul>
@@ -18,4 +18,14 @@
  
  <%= f.submit 'Create Book' %>
  
+<% end %>
+
+
+<% if @book.errors.any? %>
+ <%= @book.errors.count %>errors prohibited this obj from being saved:
+ <ul>
+  <%= @book.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+  <% end %>
+ </ul>
 <% end %>
