@@ -4,13 +4,25 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @post_images = @user.post_images
   end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
 
   def index
     @user = User.all
   end
   
-  def edit
+  def update
     @user = User.find(params[:id])
+    @user.update
+    redirect_to '/users/:id'
+  end
+  
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :profile_image)
   end
   
 end

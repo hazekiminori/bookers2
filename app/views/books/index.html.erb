@@ -1,4 +1,8 @@
 <h4>User Info</h4>
+<div>
+  <h3><%= @user.name %></h3>
+  <%= image_tag @user.get_profile_image(100,100) %>
+</div>
 image_tag、modelの記述が正しく実装されている
 current_userのnameとintroductionとeditのリンクが正しい
 form_withのmodel設定が正しく、local:trueの記述がある
@@ -24,6 +28,18 @@ privateにbook_paramsが正しく定義されている
 showのリンクが正しく実装されている
 
 <h4>Books</h4>
+<table>
+  <tbody>
+    <% @books.each do |book| %>
+    <tr>
+      <%= image_tag @user.get_profile_image(100,100) %>
+      <td><%= @user.name %></td>
+      <td><%= book.title %></td>
+      <td><%= book.body %><td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 controllerの定義が正しい
 bookに対して、投稿したユーザーの画像が表示されている
 bookのtitleとbodyが表示されている
