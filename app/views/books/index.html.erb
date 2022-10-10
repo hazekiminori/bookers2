@@ -3,6 +3,9 @@
   <h3><%= @user.name %></h3>
   <%= image_tag @user.get_profile_image(100,100) %>
 </div>
+
+<%= link_to 'edit', user_path %>
+
 image_tag、modelの記述が正しく実装されている
 current_userのnameとintroductionとeditのリンクが正しい
 form_withのmodel設定が正しく、local:trueの記述がある
