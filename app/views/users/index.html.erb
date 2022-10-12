@@ -1,4 +1,19 @@
 <h2>User info</h2>
+<table class="table">
+  <tbody>
+    <tr></tr>
+    <tr>
+      <th>name</th>
+      <th><%= @user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= @user.introduction %></th>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'user_edit', edit_user_path(@user) %>
 
 <h4>New Book</h4>
 
@@ -15,5 +30,6 @@
 <% end %>
 
 <h2>Users</h2>
-<% @user.each do |user| %>
+<% @users.each do |user| %>
+<%= link_to "Show", user_path(@user.id) %>
 <% end %>
