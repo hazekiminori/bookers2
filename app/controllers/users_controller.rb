@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   def show
     @book_new = Book.new
     @user = current_user
-    @books = @user.books
-    @post_images = @user.post_images
+    @books = @user.book
+    @user_image = @user.profile_image
   end
   
   def edit
@@ -47,10 +47,12 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :introduction, :profile_image)
   end
   
-  def correct_user
-      @user = User.find(params[:id])
-      if current_user != @user
-       redirect_to user_path(@user)
-      end
+  
+
+def current_user
+  if session[:user_id]
+    @current_user ||= User.find_by(id: session[:user_id])
   end
+end
+
 end

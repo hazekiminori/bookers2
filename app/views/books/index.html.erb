@@ -1,10 +1,12 @@
 <div class="container px-5 px-xm-0">
  <div class="row">
   <div class="col-md-3">
-   <h4>User Info</h4>
+   <h2>User Info</h2>
     <table class="table">
      <tbody>
-      <tr></tr>
+      <tr>
+       <th><%= image_tag @book.get_profile_image(100,100) %></th>
+      </tr>
       <tr>
         <th>name</th>
         <th><%= @user.name %></th>
@@ -30,10 +32,10 @@
 
 <%= form_with model: @book, local:true, url: books_path, method: :post do |f| %>
 
-<p>title</p>
+<p>Title</p>
  <%= f.text_field :title %>
  
-<p>opinion</p>
+<p>Opinion</p>
  <%= f.text_area :body %>
  
 <div><%= f.submit 'Create Book' %></div>
@@ -42,7 +44,7 @@
 </div>
 
 <div class="col-md-8 offset-md-1">
-<h4>Books</h4>
+<h2>Books</h2>
 <table class="table table-hover table-inverse">
   <thead>
     <tr>

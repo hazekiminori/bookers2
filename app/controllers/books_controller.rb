@@ -4,9 +4,10 @@ class BooksController < ApplicationController
   
   def show
     @books = Book.all
-    @book = Book.new
+    @book = @user.books
     @book_new = Book.new
     @user = current_user
+    @user_image = @user.profile_image
   end
 
   def index
@@ -56,7 +57,7 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :body)
   end
   
-  def correct_user
+  def currect_user
         @book = Book.find(params[:id])
         @user = @book.user
         redirect_to(books_path) unless @user == current_user
