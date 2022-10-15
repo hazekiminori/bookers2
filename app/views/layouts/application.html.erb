@@ -14,17 +14,21 @@
 
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class = "container">
           <a class = "navbar-brand" href="/">
             <span>Bookers</span>
           </a>
-            <button class = "navbar_toggler" type="button" data-toggle="collapse" 
-                    data-toggle="#navbarNavDropdown" aria-controls="navbarNovDropdown"
-                    aria-expended="false" aria-label="Toggle navigation">
+            <button class = "navbar_toggler collapsed" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#navbarNavDropdown" 
+                    aria-controls="navbarNavDropdown"
+                    aria-expended="false" 
+                    aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-        <duv class="collapse navbar-collapse" id="navbarNovDropdown">
+        <duv class="navbar-collapse collapse " id="navbarNavDropdown" style>
           <ul class = "navbar-nav ml-auto">
             <% if user_signed_in? %>
              <li>
@@ -55,21 +59,21 @@
             <% end %>
           </ul>
         </div>
-      </div>
-    </nav>
-  </header>
-<main class="mb-auto">
-  <%= yield %>
-</main>
-  <footer>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="mx-auto">
-          <p>CopyRight Infratop.inc</p>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

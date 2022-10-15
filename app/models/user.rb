@@ -20,5 +20,5 @@ class User < ApplicationRecord
     else
       'no_image.jpg'
     end
-end
+ end
 end
