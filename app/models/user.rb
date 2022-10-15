@@ -7,8 +7,6 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   
   has_one_attached :profile_image 
-  has_one_attached :name 
-  has_one_attached :introduction
 
   validates :name, {length: {in: 2..20} }
 

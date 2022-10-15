@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @user = 
+    @user = User.find(params[])
     @users = User.all
   end
   
