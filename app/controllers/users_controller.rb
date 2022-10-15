@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   def show
     @book_new = Book.new
     @user = current_user
-    @books = @user.book
-    @user_image = @user.profile_image
+    @user.name= current_user
+    
   end
   
   def edit
