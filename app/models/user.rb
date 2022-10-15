@@ -6,7 +6,9 @@ class User < ApplicationRecord
          
   has_many :books, dependent: :destroy
   
-  has_one_attached :profile_image
+  has_one_attached :profile_image 
+  has_one_attached :name 
+  has_one_attached :introduction
 
   validates :name, {length: {in: 2..20} }
 
@@ -14,11 +16,12 @@ class User < ApplicationRecord
 
   validates :introduction, {length: {maximum: 50}}
 
- def get_profile_image
+ def profile_image
     if profile_image.attached?
       profile_image
     else
       'no_image.jpg'
     end
  end
+ 
 end
