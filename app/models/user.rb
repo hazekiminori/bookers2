@@ -12,14 +12,13 @@ class User < ApplicationRecord
 
   validates :name, uniqueness: true
 
-  validates :introduction, {length: {maximum: 50}}
 
- def profile_image
-    if profile_image.attached?
-      profile_image
-    else
-      'no_image.jpg'
+    def get_profile_image
+      unless profile_image.attached?
+        file_path = Rails.root.join('app/assets/images/noimage.png')
+        profile_image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+      end
+        profile_image
     end
- end
- 
+
 end

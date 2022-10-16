@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  devise_scope :users do
+  devise_scope :user do
     delete 'signout', to: 'devise/sessions#destroy'
   end
   
