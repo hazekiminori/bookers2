@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   
-  before_action :currect_user, only: [:edit, :update]
+  before_action :current_user, only: [:edit, :update]
   
   def show
     @book = Book.new
@@ -24,7 +24,7 @@ class BooksController < ApplicationController
     
     if @book.update(book_params)
        redirect_to book_path(@book) 
-       flash[:success]="You have updated book successfully."
+       flash[:notice]="You have updated book successfully."
     else
        render :edit
     end
@@ -32,7 +32,6 @@ class BooksController < ApplicationController
   
   def create
     @book=Book.new(book_params)
-    @user = @books.user
     if @book.save
        redirect_to book_path(@book.id)
        flash[:notice] = "You have created book successfully."
