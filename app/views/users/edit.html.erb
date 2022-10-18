@@ -2,7 +2,16 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-      
+        
+        <% if @user.errors.any? %>
+        <%= @user.errors.count %>error prohibited this obj from being saved:
+        <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+        <% end %>
+
         <h2>User info</h2>
         <%= form_with model: @user,url: user_path(@user.id), method: :patch do |f| %>
           <div class="form-group">
@@ -10,8 +19,8 @@
               <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"Name" %>
           </div>
           <div class="form-group">
-            <label for="inputImage">Image</label>
-              <%= f.file_field :image, autofocus: true, id:"inputImage", placeholder:"Image", idaccept: "image/*" %>
+            <label for="inputProfileImage">Image</label>
+              <%= f.file_field :profile_image, autofocus: true, id:"inputProfileImage", placeholder:"ProfileImage", idaccept: "image/*" %>
           </div>
           <div class="form-group">
             <label for="inputIntroduction">Introduction</label>

@@ -30,10 +30,10 @@ class UsersController < ApplicationController
   end
   
   def create
-    @book = Book.new
-    @book.user_id = current_user.id
-    if @book.save
-       redirect_to book_path(@book.id)
+    @user = User.new(user_params)
+    @user_id = current_user.id
+    if @user.save
+       redirect_to user_path(@user.id)
        flash[:notice] = "You have created book successfully."
     else 
       @books = Book.all
