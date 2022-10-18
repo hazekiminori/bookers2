@@ -1,28 +1,40 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-      <%= render 'userinfo', user: @user %>
+      <h2>User Info</h2>
+          <%= image_tag @user.get_profile_image(100,100) %>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>name</th>
+            <th><%= @user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= @user.introduction %></th>
+          </tr>
+        </tbody>
+      </table>
+
+  <div class="row">
+    <% if @user == current_user %>
+    <%= link_to 'user_edit', edit_user_path(@user.id), class:"btn btn-outline-secondary btn-block" %>
+    <% end %>
     </div>
-    <%= render 'books/newbook', book: @book %>
+      <%= render 'books/newbook', book: @book %>
   </div>
 
-<div class="col-md-8 offset-md-1">
- <h2>Books</h2>
- 　<table class="table table-hover table-inverse">
-　　<thead>
-  　　<tr>
-   　　<th>画像</th>
-    　<th></th>
-    　<th>Title</th>
-    　<th>Option</th>
-    　<th colspan="3"></th>
-  　　</tr>
- 　　</thead>
- 　　<tbody>
-  　　 <tr>
-     
-   　</tr>
-  　</tbody>
- 　</table>
-</div>
+  <div class="col-md-8 offset-md-1">
+    <h2>Books</h2>
+ 　    <table class="table table-hover table-inverse">
+　    　<thead>
+       　　<tr>
+          　<th></th>
+          　<th>Title</th>
+          　<th>Option</th>
+          　<th colspan="3"></th>
+       　　</tr>
+ 　    　</thead>
+   　</table>
+  </div>
 </div>
