@@ -48,14 +48,6 @@ ActiveRecord::Schema.define(version: 2022_10_17_073218) do
     t.integer "user_id"
   end
 
-  create_table "post_images", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "shop_name"
-    t.text "caption"
-    t.integer "user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
