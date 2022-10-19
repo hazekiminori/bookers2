@@ -1,5 +1,5 @@
- <h2>User Info</h2>
-  <%=image_tag user.get_profile_image(100,100)%>
+      <h2>User Info</h2>
+          <%= image_tag user.get_profile_image(100,100) %>
       <table class="table">
         <tbody>
           <tr>
@@ -12,8 +12,3 @@
           </tr>
         </tbody>
       </table>
-    
-  <div class="row">
-    <% if user == current_user %> 
-    <%= link_to 'user_edit', edit_user_path(user.id), class:"btn btn-outline-secondary btn-block" %>
-    <% end %>
