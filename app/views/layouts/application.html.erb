@@ -41,7 +41,7 @@
               <%= link_to 'Books', books_path, class: "nav-link text-light" %>
              </li>
              <li>
-              <%= link_to "Log out",signout_path, method: :delete , class: "nav-link text-light" %>
+              <%= link_to "Log out", user_registration_path, method: :delete , class: "nav-link text-light" %>
              </li>
             <% else %>
              <li>
@@ -63,6 +63,7 @@
       </nav>
     </header>
     <main>
+      <p ="notice"><%= notice %></p>
       <%= yield %>
     </main>
     <footer>
