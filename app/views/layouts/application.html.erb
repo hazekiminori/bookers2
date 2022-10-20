@@ -19,16 +19,16 @@
           <%= link_to root_path, class: "navbar-brand" do %>
             <span>Bookers</span>
           <% end %>
-            <button class = "navbar_toggler collapsed"
+            <button class = "navbar-toggler"
                     type="button"
                     data-toggle="collapse"
                     data-target="#navbarNavDropdown"
                     aria-controls="navbarNavDropdown"
-                    aria-expended="false"
+                    aria-expanded="false"
                     aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-        <div class = "navbar-collapse collapse" id="navbarNavDropdown" style>
+        <div class = "collapse navbar-collapse" id="navbarNavDropdown" >
           <ul class = "navbar-nav ml-auto">
             <% if user_signed_in? %>
 

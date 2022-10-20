@@ -107,14 +107,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   border-color: hsla(0,0%,100%,.1);
 }
 
-.navbar-toggler-icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  content: "";
-  background: no-repeat 50%;
-  background-size: 100% 100%;
+[type=button]:not(:disabled), [type=reset]:not(:disabled),
+[type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
 }
 
 .navbar-toggler {
@@ -125,6 +120,68 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   border: 1px solid transparent;
   border-radius: 0.25rem;
 }
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat 50%;
+  background-size: 100% 100%; 
+}
+
+[type=button], [type=reset], [type=submit], button {
+  -webkit-appearance: button;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  ppearance: auto;
+  writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: buttontext;
+  zetter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;   
+  align-items: flex-start;
+  cursor: default;    
+  box-sizing: border-box;
+  background-color: buttonface;
+  margin: 0em;
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonborder;
+  border-image: initial;
+}
+
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat 50%;
+  background-size: 100% 100%;
+}
+
 
 .navbar-collapse {
   flex-basis: 100%;
@@ -163,4 +220,64 @@ table {
 td {
     display: table-cell;
     vertical-align: inherit;
+}
+
+.pl-5, px-5 {
+  padding-left: 3rem!important;
+}
+
+.pr-5, px-5 {
+  padding-right: 3rem!important;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+input {
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
 }
