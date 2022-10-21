@@ -19,6 +19,7 @@
             <% end %>
           </ul>
         <% end %>
+        
       <%= form_with model: @book_new, local:true, url: books_path, method: :post do |f| %>
       <div class="form-group">
         <label for="book_title">Title</label>
