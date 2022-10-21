@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
-  before_action :ensure_current_user,{only:[:edit,:update]}
   before_action :authenticate_user!
+  before_action :ensure_current_user,{only:[:edit,:update]}
 
   def ensure_current_user
     @book = Book.find(params[:id])
@@ -23,7 +23,9 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @book = Book.find(params[:id])
+    if current_user
+      @book = Book.find(params[:id])
+    end
   end
 
   def update
